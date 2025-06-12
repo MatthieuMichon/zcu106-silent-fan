@@ -44,7 +44,7 @@ As shown above the `FANFAIL#` and `FULLSPD` signals are tied on the PCB, meaning
 > Note: At initial power on, it is normal for the fan controller to energize at full speed for a few
 seconds.
 
-Thus, the firmware must issue I2C commands to the TCA6416A device for setting the pin corresponding to `MAX6643_FANFAIL_B` in a high state and also to set it in output mode.
+Thus, the firmware must issue I2C commands to the [TCA6416A][tca6416a-ds] device for setting the pin corresponding to `MAX6643_FANFAIL_B` in a high state and also to set it in output mode.
 
 | I2C Address | Register | Value | Description |
 | ----------- | -------- | ----- | ----------- |
@@ -58,5 +58,6 @@ This design I2C interface relies modules copied from the [Taxi Transport Library
 [//]: # (External Links)
 
 [max6643-ds]: https://www.analog.com/media/en/technical-documentation/data-sheets/MAX6643-MAX6645.pdf
+[tca6416a-ds]: https://www.ti.com/lit/ds/symlink/tca6416a.pdf
 [x-zcu106]: https://www.xilinx.com/products/boards-and-kits/zcu106.html
 [x-ug1244]: https://docs.amd.com/v/u/en-US/ug1244-zcu106-eval-bd
