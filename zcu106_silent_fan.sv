@@ -50,6 +50,13 @@ end
 
 logic i2c_0_done;
 
+IOBUF iobuf_i2c [1:0] (
+    .I ({i2c_0_scl_o, i2c_0_sda_o}), // logic --> IOBUF --> pad
+    .T ({i2c_0_scl_t, i2c_0_sda_t}), // logic --> IOBUF --> pad
+    .O ({i2c_0_scl_i, i2c_0_sda_i}), // pad --> IOBUF --> logic
+    .IO ({i2c0_scl, i2c0_sda})
+);
+
 cfg_loader_i2c_0 #(
     .CLK_MHZ (74.25)
 ) cfg_loader_i2c_0_i (
